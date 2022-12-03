@@ -81,7 +81,7 @@ function App() {
       }
       //if the color and position right
       if (finalColor === currentCellColor) {
-        document.getElementById(`pegsCell${currentCellId}`).style.backgroundColor = 'white';
+        document.getElementById(`pegsCell${currentCellId}`).style.backgroundColor = 'green';
       }
     }
 
@@ -95,7 +95,7 @@ function App() {
 
     //checking the win
     const isWon = (obj) => {
-      if (obj === 'rgb(255, 255, 255)') {
+      if (obj === 'rgb(0, 128, 0)') {
         return true;
       } else {
         return false;
@@ -194,12 +194,7 @@ function App() {
           })}
         </div>
       </div>
-      <div className="finalColors">
-        {randomColor &&
-          randomColor.map((color, i) => {
-            return <button key={i} id={`final${i}`}></button>;
-          })}
-      </div>
+
       <div className="other">
         <div className="secretColor">
           <SecretColors setRandomColor={RandomColor} gameOver={gameOver} colors={colors} />
@@ -220,6 +215,12 @@ function App() {
         <button onClick={restart} className="check">
           Restart
         </button>
+      </div>
+      <div className="finalColors">
+        {randomColor &&
+          randomColor.map((color, i) => {
+            return <button key={i} id={`final${i}`}></button>;
+          })}
       </div>
       <Rules isRuleActive={isRuleActive} isRule={isRule} />
     </div>

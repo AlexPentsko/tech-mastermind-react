@@ -6,6 +6,7 @@
 
 body {
   background-color: beige;
+  max-height: 800px;
 }
 
 button {
@@ -16,14 +17,14 @@ button {
   padding: 10px;
   position: relative;
   display: flex;
-  max-width: 650px;
+  flex-wrap: wrap;
+  max-width: 725px;
   margin: 20px auto;
 }
 
 .table {
   box-shadow: 7px 5px 5px rgb(147, 147, 147);
   display: flex;
-  justify-content: space-between;
   border-radius: 20px;
   background: #ffddaa;
   border: 3px solid #985b00;
@@ -80,6 +81,7 @@ button {
 
 .other {
   margin-left: 30px;
+  padding: 0px 10px;
 }
 
 .colorBoard {
@@ -145,7 +147,7 @@ button {
   height: 50px;
   background-color: #ffddaa;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
   border: 3px solid #985b00;
   font-size: 20px;
   color: #985b00;
@@ -186,10 +188,9 @@ button {
 }
 
 .finalColors {
-  position: absolute;
   bottom: -70px;
   box-shadow: 5px 5px 5px rgb(147, 147, 147);
-  width: 290px;
+  max-width: 290px;
   height: 70px;
   align-items: center;
   background-color: #ffddaa;
@@ -200,6 +201,7 @@ button {
   grid-column-gap: 15px;
   flex-grow: 1;
   padding: 0px 20px;
+  margin: 10px 0px;
   button {
     cursor: pointer;
     margin: 0 auto;
@@ -211,6 +213,183 @@ button {
     box-shadow: 3px 3px 5px rgb(147, 147, 147);
     &:hover {
       box-shadow: 4px 4px 5px rgb(93, 93, 93);
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    max-width: 610px;
+  }
+  .colorBoard {
+    display: grid;
+    grid-template-columns: repeat(2, 75px);
+    grid-template-rows: repeat(4, 75px);
+    max-width: 150px;
+    height: 300px;
+  }
+
+  .currentColor {
+    max-width: 150px;
+  }
+  .other {
+    margin-left: 10px;
+  }
+  .check {
+    max-width: 150px;
+  }
+  .table {
+    max-width: 410px;
+    .board {
+      padding: 10px;
+    }
+  }
+  .finalColors {
+    max-width: 270px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 15px;
+    flex-grow: 1;
+    padding: 0px 10px;
+    margin: 10px 0px;
+  }
+}
+
+@media (max-width: 625px) {
+  .container {
+    max-width: 500px;
+  }
+  .check {
+    font-size: 15px;
+    max-height: 40px;
+    max-width: 100px;
+  }
+  .currentColor {
+    max-height: 40px;
+    max-width: 100px;
+  }
+  .colorBoard {
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    grid-template-rows: repeat(4, 50px);
+    grid-column-gap: 0px;
+    max-width: 150px;
+    height: 200px;
+  }
+  .other {
+    max-width: 120px;
+  }
+  .table {
+    width: 350px;
+    .board {
+      grid-column-gap: 2px;
+      grid-row-gap: 3px;
+    }
+    .pegs {
+      padding: 15px 5px;
+      max-width: 120px;
+      grid-row-gap: 17px;
+    }
+  }
+  .finalColors {
+    max-width: 230px;
+    grid-column-gap: 0px;
+  }
+}
+
+@media (max-width: 515px) {
+  .container {
+    max-width: 450px;
+  }
+  .board {
+    padding: 5px !important;
+  }
+  .table {
+    max-width: 300px;
+    grid-column-gap: 2px;
+    .pegs {
+      padding: 5px 0px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      grid-row-gap: 5px;
+    }
+  }
+
+  .finalColors {
+    max-width: 222px;
+    padding: 0px 5px;
+    grid-column-gap: 2px;
+  }
+}
+
+@media (max-width: 465px) {
+  .container {
+    max-width: 400px;
+    margin: 10px auto;
+  }
+  .board {
+    button {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .colorBoard {
+    max-width: 100px;
+  }
+  .table {
+    max-width: 250px;
+  }
+  .finalColors {
+    max-width: 182px;
+    max-height: 60px;
+    button {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .pegs {
+    button {
+      max-width: 20px;
+      max-height: 20px;
+    }
+  }
+}
+
+@media (max-width: 403px) {
+  .table {
+    max-width: 232px;
+    .pegs {
+      max-width: 60px;
+      grid-column-gap: 2px;
+    }
+  }
+  .other {
+    margin: 0;
+    padding: 0px 5px 0px 10px;
+  }
+}
+
+@media (max-width: 368px) {
+  .container {
+    max-width: 335px;
+  }
+
+  .table {
+    max-width: 200px;
+    .board {
+      button {
+        max-width: 30px;
+        max-height: 30px;
+      }
+    }
+    .pegs {
+      max-width: 40px;
+      button {
+        max-width: 15px;
+        max-height: 15px;
+      }
     }
   }
 }
